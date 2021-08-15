@@ -6,8 +6,8 @@
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
       <div>
-        <label>Puppy_ID:</label>
-        <input type="text" v-model="newFavoriteSnackParams.puppy_id" />
+        <label>Pet_ID:</label>
+        <input type="text" v-model="newFavoriteSnackParams.pet_id" />
       </div>
       <div>
         <label>Item_ID:</label>
