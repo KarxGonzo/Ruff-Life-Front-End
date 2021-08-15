@@ -36,7 +36,7 @@ export default {
   methods: {
     submit: function () {
       axios
-        .post("/shopping_histories", this.newItemParams)
+        .post("/shopping_histories", this.newShoppingHistoryParams)
         .then((response) => {
           console.log(response.data);
           this.$router.push("/about");

@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="PetsIndex">
     <h1>All Pets</h1>
     <div v-for="pet in pets" v-bind:key="pet.id">
       <h2>{{ pet.name }}</h2>

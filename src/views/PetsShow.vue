@@ -4,9 +4,6 @@
     <h1>id: {{ pet.id }}</h1>
     <h1>name: {{ pet.name }}</h1>
     <h1>Picture: {{ pet.picture }}</h1>
-    <p>user_id: {{ $parent.getUserId() }}</p>
-    <p>user_id: {{ pet.user_id }}</p>
-    <router-link v-if="pet.user_id == $parent.getUserId()" v-bind:to="`/pets/${pet.id}/edit`">Edit</router-link>
     <p><img v-bind:src="pet.image_url"></p>
 
   </div>
@@ -23,7 +20,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "Showing you your pets!",
+      message: "Showing you your pet!",
       pet: {},
     };
   },
