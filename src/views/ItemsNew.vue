@@ -14,8 +14,8 @@
         <input type="text" v-model="newItemParams.picture" />
       </div>
        <div>
-        <label>upc:</label>
-        <input type="integer" v-model="newItemParams.upc" />
+        <label>Please Enter the UPC here:</label>
+        <input type="integer" v-model="newItemParams.search" />
       </div>
        <div>
         <label>price:</label>
