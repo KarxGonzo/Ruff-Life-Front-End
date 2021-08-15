@@ -10,7 +10,7 @@
 export default {
   data: function () {
     return {
-      message: "Welcome to Vue.js!",
+      message: "Welcome to Pet Source - the Source of Truth for all of your pet needs!",
     };
   },
   created: function () {},
