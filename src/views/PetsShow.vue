@@ -3,8 +3,7 @@
     <h1>{{ message }}</h1>
     <h1>id: {{ pet.id }}</h1>
     <h1>name: {{ pet.name }}</h1>
-    <h1>Picture: {{ pet.picture }}</h1>
-    <p><img v-bind:src="pet.image_url"></p>
+    <p><img v-bind:src="pet.picture"></p>
 
   </div>
 </template>

@@ -1,22 +1,29 @@
 <template>
-  <div class="login">
-    <form v-on:submit.prevent="submit()">
-      <h1>Login</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Email:</label>
-        <input type="email" v-model="newSessionParams.email" />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" v-model="newSessionParams.password" />
-      </div>
-      <input type="submit" value="Submit" />
-    </form>
+<div class="login">
+  <div class="div-center">
+    <div class="content">
+      <h3>Login</h3>
+      <hr />
+      <form v-on:submit.prevent="submit()">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" v-model="newSessionParams.email" class="form-control" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" v-model="newSessionParams.password"   class="form-control"placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <hr />
+      </form>
+    </div>
+    </span>
+  </div>
   </div>
 </template>
+
+<style scoped>
+</style>
 
 <script>
 import axios from "axios";

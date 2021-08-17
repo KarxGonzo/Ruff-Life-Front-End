@@ -35,7 +35,7 @@ export default {
         .post("/pets", this.newPetParams)
         .then((response) => {
           console.log(response.data);
-          this.$router.push("/about");
+          this.$router.push("/pets");
         })
         .catch((error) => {
           this.errors = error.response.data.errors;
