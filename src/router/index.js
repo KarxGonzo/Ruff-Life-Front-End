@@ -8,6 +8,7 @@ import PetsIndex from "../views/PetsIndex.vue";
 import PetsNew from "../views/PetsNew.vue";
 import PetsShow from "../views/PetsShow.vue";
 import PetsEdit from "../views/PetsEdit.vue";
+import ItemsIndex from "../views/ItemsIndex.vue";
 import ItemsNew from "../views/ItemsNew.vue";
 import ItemsShow from "../views/ItemsShow.vue";
 import ShoppingHistoryIndex from "../views/ShoppingHistoryIndex.vue";
@@ -30,6 +31,7 @@ const routes = [
   { path: "/pets/:id", name: "PetsShow", component: PetsShow },
   { path: "/pets/:id/edit", name: "PetsEdit", component: PetsEdit },
   
+  { path: "/items", name: "ItemsIndex", component: ItemsIndex },
   { path: "/items/new", name: "ItemsNew", component: ItemsNew },
   { path: "/items/:id", name: "ItemsShow", component: ItemsShow },
   

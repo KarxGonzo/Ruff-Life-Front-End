@@ -8,8 +8,14 @@
         </div>
         <div class="col-sm-8">
           <div class="card-body">
-            <h5 class="card-title">{{`${pet.name}`}}</h5>
-              <a
+            <h5 class="card-title">{{`${pet.name} ${pet.id}`}}</h5>
+               <a
+              type="button" 
+              class="btn btn-primary btn-sm" 
+              style="background-color: #333333;" 
+              v-bind:href="`/favorite_snacks/new`" 
+              role="button"> Add a Favorite Snacks</a>
+               <a
               type="button" 
               class="btn btn-primary btn-sm" 
               style="background-color: #333333;" 
