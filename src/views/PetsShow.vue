@@ -4,7 +4,7 @@
     <h1>id: {{ pet.id }}</h1>
     <h1>name: {{ pet.name }}</h1>
     <p><img v-bind:src="pet.picture"></p>
-
+    <p>Item ID: {{ item_id }}</p>
   </div>
 </template>
 
@@ -20,7 +20,8 @@ export default {
   data: function () {
     return {
       message: "Showing you your pet!",
-      pet: {},
+      pet: [],
+      items: [],
     };
   },
   created: function () {

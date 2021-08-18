@@ -6,8 +6,18 @@
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
       <div>
-        <label>Pet_ID:</label>
-        <input type="text" v-model="newFavoriteSnackParams.pet_id" />
+      <p>Pet ID: {{ pet_id }}</p>
+      <select v-model="newFavoriteSnackParams.pet_id">
+        <option v-for="pet in pets" v-bind:value="pet.id">{{ pet.name }}</option>
+      </select>
+      <br>
+
+      <p>Item ID: {{ item_id }}</p>
+      <select v-model="newFavoriteSnackParams.item_id">
+        <option v-for="item in items" v-bind:value="item.id">{{ item.name }}</option>
+      </select>
+      <br>
+
       </div>
       <div>
         <label>Item_ID:</label>
@@ -31,7 +41,21 @@ export default {
     return {
       newFavoriteSnackParams: {},
       errors: [],
+      pets: [],
+      pet_id: 0,
+      items: [],
+      item_id: 0,
     };
+  },
+  created: function () {
+    axios.get("/pets").then((response) => {
+      console.log(response.data);
+      this.pets = response.data;
+    });
+    axios.get("/items").then((response) => {
+      console.log(response.data);
+      this.items = response.data;
+    });
   },
   methods: {
     submit: function () {
