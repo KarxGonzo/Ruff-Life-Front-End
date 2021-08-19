@@ -18,9 +18,14 @@
                                     </div>
                                     <!-- Email address input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="email" type="integer" v-model="newshoppinghistoryParams.item_id" 
-                                        placeholder="Item_ID" />
-                                        <label for="item_id">Item_ID</label>
+                                        <select 
+                                        class="form-control" 
+                                        id="email" 
+                                        type="integer"  
+                                        placeholder="Item_ID"
+                                        v-model="newshoppinghistoryParams.item_id">
+                                         <option v-for="item in items" v-bind:value="item.id">{{ item.name }}</option>
+                                         </select>
                                     </div>
                                     <!-- Phone number input-->
                                     <div class="form-floating mb-3">
@@ -58,7 +63,15 @@ export default {
     return {
       newshoppinghistoryParams: {},
       errors: [],
+      items: [],
+      item_id: 0,
     };
+  },
+  created: function () {
+    axios.get("/items").then((response) => {
+      console.log(response.data);
+      this.items = response.data;
+    });
   },
   methods: {
     submit: function () {
