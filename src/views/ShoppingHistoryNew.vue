@@ -1,27 +1,53 @@
 <template>
-  <div class="Shopping-History-New">
+  <section class="Shopping-History-New">
     <form v-on:submit.prevent="submit()">
-      <h1>Create a new Shopping History Event</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Date:</label>
-        <input type="text" v-model="newshoppinghistoryParams.date" />
-      </div>
-      <div>
-        <label>item_id:</label>
-        <input type="integer" v-model="newshoppinghistoryParams.item_id" />
-      </div>
-       <div>
-        <label>quantity:</label>
-        <input type="integer" v-model="newshoppinghistoryParams.quantity" />
-      </div>
-      <input type="submit" value="Submit" />
+      <ul> <li v-for="error in errors" v-bind:key="error">{{ error }}</li></ul>
+                <div class="container px-5">
+                    <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+                        <div class="text-center mb-5">
+                            <p class="lead fw-normal text-muted mb-0">Create a new Shopping History Event</p>
+                        </div>
+                        <div class="row gx-5 justify-content-center">
+                            <div class="col-lg-8 col-xl-6">
+
+                                    <!-- Name input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="date" type="date" v-model="newshoppinghistoryParams.date" placeholder="Enter the date of the receipt..." data-sb-validations="required" />
+                                        <label for="date">Full Date</label>
+                                        <div class="invalid-feedback" data-sb-feedback="date:required">A date is required.</div>
+                                    </div>
+                                    <!-- Email address input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="email" type="integer" v-model="newshoppinghistoryParams.item_id" 
+                                        placeholder="Item_ID" />
+                                        <label for="item_id">Item_ID</label>
+                                    </div>
+                                    <!-- Phone number input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="quantity" type="integer" v-model="newshoppinghistoryParams.quantity" />
+                                        <label for="Quantity">Enter Quantity</label>
+                                    </div>
+                                    <!-- Submit success message-->
+                                    <!---->
+                                    <!-- This is what your users will see when the form-->
+                                    <!-- has successfully submitted-->
+                                    <div class="d-none" id="submitSuccessMessage">
+                                        <div class="text-center mb-3">
+                                            <div class="fw-bolder">Form submission successful!</div>
+                                            To activate this form, sign up at
+                                            <br />
+                                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                        </div>
+                                    </div>
+                                    <!-- Submit Button-->
+                                    <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
     </form>
-    </div>
-    </div>
-  </div>
+  </section>
 </template>
 
 

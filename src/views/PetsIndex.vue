@@ -1,34 +1,26 @@
 <template>
-  <div class="home bg-dark">
-    <br>
-    <div class="card mb-3" style="max-width: 800px;" v-for="pet in pets">
-      <div class="row g-0">
-        <div class="col-sm-4">
-          <img v-bind:src="pet.picture" class="img-fluid rounded-start" alt="">
-        </div>
-        <div class="col-sm-8">
-          <div class="card-body">
-            <h5 class="card-title">{{`${pet.name} ${pet.id}`}}</h5>
-               <a
-              type="button" 
-              class="btn btn-primary btn-sm" 
-              style="background-color: #333333;" 
-              v-bind:href="`/favorite_snacks/new`" 
-              role="button"> Add a Favorite Snacks</a>
-               <a
-              type="button" 
-              class="btn btn-primary btn-sm" 
-              style="background-color: #333333;" 
-              v-bind:href="`/pets/${pet.id}`" 
-              role="button"> See Favorite Snacks</a>
-            <div>
-            </div>
-          </div>
-        </div>
-      </div>
+   <section class="py-5">
+    <div class="container px-5">
+      <h2 class="fw-bolder fs-5 mb-4">See your Pets! </h2>
+          <div class="row gx-5">
+            <div class="col-lg-4 mb-5">
+              <div class="card h-100 shadow border-0">
+                  <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
+                      <div class="card-body p-4">
+                        <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h5 card-title mb-3">Blog post title</div></a>
+                        <p class="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      </div>
+                        <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                  <div class="d-flex align-items-end justify-content-between"></div></a>
+                        </div>
+                </div>
+              </div>
+            </div>        
     </div>
-  </div>
+  </section>
 </template>
+
+
 <style></style>
 
 <script>
