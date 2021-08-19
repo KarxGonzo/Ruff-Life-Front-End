@@ -1,28 +1,38 @@
 <template>
   <div class="signup">
+    <div class="div-center">
+    <div class="content">
     <form v-on:submit.prevent="submit()">
       <h1>Signup</h1>
+         <hr />
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
-      <div>
-        <label>Name:</label>
-        <input type="text" v-model="newUserParams.name" />
+      <div class="form-group">
+          <label for="exampleInputName">Name</label>
+          <input type="text" v-model="newUserParams.name" class="form-control" placeholder="Name">
       </div>
-      <div>
-        <label>Email:</label>
-        <input type="email" v-model="newUserParams.email" />
+
+      <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" v-model="newUserParams.email" class="form-control" placeholder="Email">
       </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" v-model="newUserParams.password" />
+  
+      <div class="form-group">
+          <label for="exampleInputPassword">Password</label>
+          <input type="password" v-model="newUserParams.password" class="form-control" placeholder="Email">
       </div>
-      <div>
-        <label>Password confirmation:</label>
-        <input type="password" v-model="newUserParams.password_confirmation" />
+
+      <div class="form-group">
+          <label for="exampleInputPasswordConfirmation">Password Confirmation</label>
+          <input type="password" v-model="newUserParams.password_confirmation" class="form-control" placeholder="Email">
       </div>
-      <input type="submit" value="Submit" />
+  
+      <button type="submit" class="btn btn-primary">Login</button>
+        <hr />
     </form>
+      </div>  
+    </div>  
   </div>
 </template>
 

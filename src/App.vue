@@ -10,22 +10,22 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/signup">Sign-up</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownAccountInformation" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account Information</a>
+                            <li v-if="!isLoggedIn()" class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                            <li v-if="!isLoggedIn()" class="nav-item"><a class="nav-link" href="/signup">Sign-up</a></li>
+                           <li v-if="isLoggedIn()" class="nav-item dropdown">
+                                <a 
+                                class="nav-link dropdown-toggle" id="navbarDropdownAccountInformation" 
+                                href="#" 
+                                role="button" 
+                                data-bs-toggle="dropdown" aria-expanded="false">Account Information
+                                </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownAccount Information">
                                     <li><a class="dropdown-item" href="/pets/new">Create a New Pet</a></li>
                                     <li><a class="dropdown-item" href="/pets/new">Create a New Shopping History</a></li>
                                     <li><a class="dropdown-item" href="/items/new">Create a New Item </a></li>
-                                </ul>
+                                </ul></li>
+                               <li v-if="isLoggedIn()" class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-                                    <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
-                                    <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
-                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -69,3 +69,20 @@
 
 <style>
 </style>
+
+<script>
+export default {
+  methods: {
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    getUserId: function () {
+      return localStorage.getItem("user_id");
+    },
+  },
+};
+</script>
