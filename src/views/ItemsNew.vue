@@ -1,38 +1,27 @@
 <template>
-  <div class="pets-new">
+  <div class="items-new">
     <form v-on:submit.prevent="submit()">
-      <h1>Create a new item</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Name:</label>
-        <input type="text" v-model="newItemParams.name" />
-      </div>
-      <div>
-        <label>Picture:</label>
-        <input type="text" v-model="newItemParams.picture" />
-      </div>
-       <div>
-        <label>Please Enter the UPC here:</label>
-        <input type="integer" v-model="newItemParams.search" />
-      </div>
-       <div>
-        <label>price:</label>
-        <input type="integer" v-model="newItemParams.price" />
-      </div>
-       <div>
-        <label>brand:</label>
-        <input type="text" v-model="newItemParams.brand" />
-      </div>
-      <div>
-        <label>merchant:</label>
-        <input type="text" v-model="newItemParams.merchant" />
-      </div>
-      <input type="submit" value="Submit" />
+      <section class="py-5">
+        <div class="container px-5">
+            <h1 class="fw-bolder fs-5 mb-4">Create a New Item</h1>
+              <div class="card border-0 shadow rounded-3 overflow-hidden">
+                <div class="card-body p-0">
+                  <div class="row gx-0">
+                    <div class="col-sm-0 col-sm-0 py-sm-0">
+                      <div class="p-4 p-md-5">
+                         <ul> <li v-for="error in errors" v-bind:key="error">{{ error }}</li></ul>
+                          <label>Please Enter the UPC here:</label>
+                          <input type="integer" v-model="newItemParams.search" />
+                          <input type="submit" value="Submit" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+          <br>
+      </section>
     </form>
-    </div>
-    </div>
   </div>
 </template>
 
