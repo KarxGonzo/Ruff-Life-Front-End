@@ -1,37 +1,58 @@
 <template>
-  <div class="pets-new">
+  <section class="py-5">
     <form v-on:submit.prevent="submit()">
-      <h1>Create a new Favorite Snack</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-      <p>Pet ID: {{ pet_id }}</p>
-      <select v-model="newFavoriteSnackParams.pet_id">
-        <option v-for="pet in pets" v-bind:value="pet.id">{{ pet.name }}</option>
-      </select>
-      <br>
-
-      <p>Item ID: {{ item_id }}</p>
-      <select v-model="newFavoriteSnackParams.item_id">
-        <option v-for="item in items" v-bind:value="item.id">{{ item.name }}</option>
-      </select>
-      <br>
-
-      </div>
-      <div>
-        <label>Item_ID:</label>
-        <input type="text" v-model="newFavoriteSnackParams.picture" />
-      </div>
-       <div>
-        <label>Rating:</label>
-        <input type="integer" v-model="newFavoriteSnackParams.rating" />
-      </div>
-      <input type="submit" value="Submit" />
-    </form>
-    </div>
-    </div>
-  </div>
+      <ul> <li v-for="error in errors" v-bind:key="error">{{ error }}</li></ul>
+                <div class="container px-5">
+                    <!-- Contact form-->
+                    <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+                        <div class="text-center mb-5">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+                            <p class="lead fw-normal text-muted mb-0">Add a New Snack</p>
+                        </div>
+                        <div class="row gx-5 justify-content-center">
+                            <div class="col-lg-8 col-xl-6">
+                                    <!-- Pet input-->
+                                    <div class="form-floating mb-3">
+                                        <select 
+                                        class="form-control" 
+                                        id="name" 
+                                        type="text" 
+                                        placeholder="Pick your Pet"
+                                        v-model="newFavoriteSnackParams.pet_id"
+                                        >
+                                        <option v-for="pet in pets" v-bind:value="pet.id">{{ pet.name }}</option>
+                                        </select>
+                                    </div>
+                                    <!-- Item Input-->
+                                    <div class="form-floating mb-3">
+                                        <select 
+                                        class="form-control" 
+                                        id="item" 
+                                        type="string" 
+                                        placeholder="Item"
+                                        v-model="newFavoriteSnackParams.item_id"
+                                        >
+                                        <label for="item">Pick Item</label>
+                                        <option v-for="item in items" v-bind:value="item.id">{{ item.name }}</option>
+                                        </select>
+                                    </div>
+                                    <!-- Rating Input-->
+                                    <div class="form-floating mb-3">
+                                        <input 
+                                        class="form-control" 
+                                        id="rating" 
+                                        type="integer" 
+                                        placeholder="Rating" 
+                                        v-model="newFavoriteSnackParams.rating" />
+                                        <label for="Rating">Rating</label>
+                                    </div>
+                                    <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </section>
 </template>
 
 <script>

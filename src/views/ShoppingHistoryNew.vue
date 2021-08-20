@@ -12,7 +12,11 @@
 
                                     <!-- Name input-->
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="date" type="date" v-model="newshoppinghistoryParams.date" placeholder="Enter the date of the receipt..." data-sb-validations="required" />
+                                        <input 
+                                        class="form-control" 
+                                        id="date" 
+                                        type="date" v-model="newshoppinghistoryParams.date" 
+                                        placeholder="Enter the date of the receipt..." data-sb-validations="required" />
                                         <label for="date">Full Date</label>
                                         <div class="invalid-feedback" data-sb-feedback="date:required">A date is required.</div>
                                     </div>
