@@ -4,14 +4,19 @@
       <h2 class="fw-bolder fs-5 mb-4">See your Pets! </h2>
           <div class="row gx-5">
             <div class="col-lg-4 mb-5">
-              <div class="card h-100 shadow border-0">
-                  <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
+              <div class="card h-100 shadow border-0" v-for= "pet in pets">
+                  <img v-bind:src="pet.picture" class="card-img-top"  alt="..." />
                       <div class="card-body p-4">
-                        <a class="text-decoration-none link-dark stretched-link" href="#!"><div class="h5 card-title mb-3">Blog post title</div></a>
+                        <a class="text-decoration-none link-dark -link" href="#!"><div class="h5 card-title mb-3">{{`${pet.name}`}}</div></a>
                         <p class="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                       </div>
                         <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                                  <div class="d-flex align-items-end justify-content-between"></div></a>
+                        <div class="d-flex align-items-end justify-content-between">
+                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="/pets/:id">See {{`${pet.name}` +`'s`}} Favorite Snacks </a>
+                        </div></a>
+                        <br>
+                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="/favorite_snacks/new">Add a New Snack for {{`${pet.name}`}}  </a>
+                        </div></a>
                         </div>
                 </div>
               </div>

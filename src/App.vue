@@ -12,19 +12,8 @@
                             <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                             <li v-if="!isLoggedIn()" class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                             <li v-if="!isLoggedIn()" class="nav-item"><a class="nav-link" href="/signup">Sign-up</a></li>
-                           <li v-if="isLoggedIn()" class="nav-item dropdown">
-                                <a 
-                                class="nav-link dropdown-toggle" id="navbarDropdownAccountInformation" 
-                                href="#" 
-                                role="button" 
-                                data-bs-toggle="dropdown" aria-expanded="false">Account Information
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownAccount Information">
-                                    <li><a class="dropdown-item" href="/pets/new">Create a New Pet</a></li>
-                                    <li><a class="dropdown-item" href="/pets/new">Create a New Shopping History</a></li>
-                                    <li><a class="dropdown-item" href="/items/new">Create a New Item </a></li>
-                                </ul></li>
-                               <li v-if="isLoggedIn()" class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                            <li v-if="isLoggedIn()" class="nav-item"><a class="nav-link" href="/about">Profile Page</a></li>
+                            <li v-if="isLoggedIn()" class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
                             </li>
                             </li>
                         </ul>
@@ -41,7 +30,7 @@
                                 <p class="lead fw-normal text-white-50 mb-4">Quickly keep track of pets, treats, and everything in between.</p>
                             </div>
                         </div>
-                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
+                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxk9kM-5UXc8_i5t7T8-06tDfRubQ8C26I6AYLSUbWmD4SvPz3lmxkSsMVmuAfbEIo_ZQ&usqp=CAU" alt="..." /></div>
                     </div>
                 </div>
             </header>
