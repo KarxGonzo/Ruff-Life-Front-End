@@ -10,7 +10,20 @@
                       <div class="card-body p-4">
                         <a class="text-decoration-none link-dark -link" href="#!"><div class="h5 card-title mb-3">{{`${pet.name}`}}</div></a>
                         <p class="card-text mb-0" v-for= "snack in pet.favorite_snacks">{{ (snack.item.name) }} {{JSON.parse(snack.item.picture)}}</p>
+                        <div v-for= "picture in pet.favorite_snacks">
+                        <img v-bind:src="picture" class="img-fluid" />
+                        </div>
                         <!-- <p class="card-text mb-0">{{ pet.favorite_snacks[0].item.picture }}</p> -->
+                      
+                        </div>
+                        </div>
+                        <br>
+
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="/favorite_snacks/new">Add a New Snack for {{`${pet.name}`}}  </a>
+                        </div>
+                        </div></a>
+
                         </div>
                         <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                         </div>

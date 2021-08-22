@@ -60,6 +60,21 @@
               </div>
             </div>
       </div>
+      <br>
+      <div class="container px-5">
+          <div class="card border-0 shadow rounded-3 overflow-hidden">
+            <div class="card-body p-0">
+              <div class="row gx-0">
+                <div class="col-sm-0 col-sm-0 py-sm-0">
+                  <div class="p-4 p-md-5">
+                    <div class="h6 fw-bolder">See History of Shopping Trips</div>
+                      <a class="stretched-link text-decoration-none" href="/shopping_histories"> Click Here <i class="bi bi-arrow-right"></i> </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
   </section>
    
 </template>
