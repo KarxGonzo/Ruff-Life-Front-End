@@ -79,8 +79,9 @@ export default {
   },
   methods: {
     submit: function () {
+      console.log(this.newshoppinghistoryParams);
       axios
-        .post("/shopping_histories", this.newShoppingHistoryParams)
+        .post("/shopping_histories", this.newshoppinghistoryParams)
         .then((response) => {
           console.log(response.data);
           this.$router.push("/shopping_histories");

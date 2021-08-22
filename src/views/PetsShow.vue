@@ -9,21 +9,18 @@
                   <img v-bind:src="pet.picture" class="card-img-top"  alt="..." />
                   <div class="card-body p-4">
                     <a class="text-decoration-none link-dark -link" href="#!"><div class="h5 card-title mb-3">{{`${pet.name}`}}</div></a>
-                    
-                    
-                    <p class="card-text mb-0" v-for= "snack in pet.favorite_snacks">{{ (snack.item.name) }} </p>
-                    
-                    <div v-for= "favorite_snack in pet.favorite_snacks">
-                      <div v-for="image in favorite_snack.images">
-                        <img v-bind:src="image"/>
-                      </div>
-                      <!-- <img v-bind:src="picture" class="img-fluid" /> -->
-                    </div>
-                    <!-- <p class="card-text mb-0">{{ pet.favorite_snacks[0].item.picture }}</p> -->
-                  
                     </div>
                     </div>
                     <br>
+                    
+                    <p class="card-body p-4" v-for= "snack in pet.favorite_snacks">{{ (snack.item.name) }} </p>
+                        <div v-for= "favorite_snack in pet.favorite_snacks">
+                          <div v-for="image in favorite_snack.images">
+                            <img v-bind:src="image" class="card-img-top"/>
+                          </div>
+                        </div>
+                   
+                  
                     <div class="d-grid gap-2 col-6 mx-auto">
                     <a class="btn btn-primary btn-lg px-4 me-sm-3" href="/favorite_snacks/new">Add a New Snack for {{`${pet.name}`}}  </a>
                     </div>

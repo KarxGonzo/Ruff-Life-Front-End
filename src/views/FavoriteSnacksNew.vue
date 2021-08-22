@@ -78,6 +78,9 @@ export default {
       console.log(response.data);
       this.items = response.data;
     });
+    axios.get(`/pets/${this.$route.params.id}`).then((response) => {
+      console.log(response.data);
+    });
   },
   methods: {
     submit: function () {
@@ -85,7 +88,7 @@ export default {
         .post("/favorite_snacks", this.newFavoriteSnackParams)
         .then((response) => {
           console.log(response.data);
-          this.$router.push("/about");
+          this.$router.push(`/pets/`);
         })
         .catch((error) => {
           this.errors = error.response.data.errors;
