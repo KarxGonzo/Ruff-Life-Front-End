@@ -17,9 +17,9 @@
                                         class="form-control" 
                                         id="name" 
                                         type="text" 
-                                        placeholder="Pick your Pet"
                                         v-model="newFavoriteSnackParams.pet_id"
                                         >
+                                        <option disabled value=" ">Please Select a Pet</option>
                                         <option v-for="pet in pets" v-bind:value="pet.id">{{ pet.name }}</option>
                                         </select>
                                     </div>
@@ -32,7 +32,8 @@
                                         placeholder="Item"
                                         v-model="newFavoriteSnackParams.item_id"
                                         >
-                                        <label for="item">Pick Item</label>
+                                        <label for="item">"Please Select an Item"</label>
+                                        <option disabled value=" ">Please Select an Item</option>
                                         <option v-for="item in items" v-bind:value="item.id">{{ item.name }}</option>
                                         </select>
                                     </div>
