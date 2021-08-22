@@ -1,12 +1,23 @@
 <template>
-  <div class="ShoppingHistoryIndex">
-    <h1>All Shopping History Events</h1>
-    <div v-for="shoppinghistory in shoppinghistory" v-bind:key="shoppinghistory.id">
-      <h2>{{ shoppinghistory.date }}</h2>
-      <h2>{{ shoppinghistory.item_id }}</h2>
-      <h2>{{ shoppinghistory.quantity}}</h2>
+   <section class="py-5">
+    <div class="container px-5">
+       <div class="row gx-5 justify-content-center">
+          <div class="col-lg-8 col-xl-6">
+              <div class="text-center">
+                <h2 class="fw-bolder">See Past Shopping Trips!</h2>
+                  <div class="card h-100 shadow border-0" v-for="shoppinghistory in shoppinghistory" v-bind:key="shoppinghistory.id">
+                      <div class="card-body p-4">
+                        <a class="text-decoration-none link-dark -link" href="#!"><div class="h5 card-title mb-3">{{ shoppinghistory.date }}</div></a>
+                        <p class="card-text mb-0"> 
+                        You bought {{ shoppinghistory.quantity}} of {{ shoppinghistory.item_id }} </p>
+                      </div>
+
+                        </div>
+                </div>
+              </div>
+            </div>        
     </div>
-  </div>
+  </section>
 </template>
 
 <style></style>

@@ -83,7 +83,7 @@ export default {
         .post("/shopping_histories", this.newShoppingHistoryParams)
         .then((response) => {
           console.log(response.data);
-          this.$router.push("/about");
+          this.$router.push("/shopping_histories");
         })
         .catch((error) => {
           this.errors = error.response.data.errors;

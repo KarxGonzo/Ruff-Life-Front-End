@@ -1,28 +1,25 @@
 <template>
-            <!-- Blog preview section-->
-            <section class="py-5">
-                <div class="container px-5 my-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-8 col-xl-6">
-                            <div class="text-center">
-                               <img class="card-img-top" img v-bind:src="pet.picture" />
-                                <p class="lead fw-normal text-muted mb-5">Name: {{ pet.name }}</p>
-                            </div>
+   <section class="py-5">
+    <div class="container px-5">
+       <div class="row gx-5 justify-content-center">
+          <div class="col-lg-8 col-xl-6">
+              <div class="text-center">
+                <h2 class="fw-bolder">See your Pet's Favorite Snack!</h2>
+                  <div class="card h-100 shadow border-0">
+                  <img v-bind:src="pet.picture" class="card-img-top"  alt="..." />
+                      <div class="card-body p-4">
+                        <a class="text-decoration-none link-dark -link" href="#!"><div class="h5 card-title mb-3">{{`${pet.name}`}}</div></a>
+                        <p class="card-text mb-0" v-for= "snack in pet.favorite_snacks">{{ (snack.item.name) }} {{JSON.parse(snack.item.picture)}}</p>
+                        <!-- <p class="card-text mb-0">{{ pet.favorite_snacks[0].item.picture }}</p> -->
                         </div>
-                    </div>
-                    <div class="row gx-5">
-                        <div class="col-lg-4 mb-5">
-                            <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" img v-bind:src="pet.picture" />
-                                <div class="card-body p-4">
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Favorite Snack: {{ pet.favorite_snacks[0][1]}}</h5></a>
-                                    <p class="card-text mb-0">Favorite Snacks: {{ pet.favorite_snacks }}</p>
-                                </div>
-                            </div>
+                        <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                         </div>
                     </div>
                 </div>
-        </section>
+              </div>
+            </div>        
+    </div>
+  </section>
 </template>
 
 <style></style>

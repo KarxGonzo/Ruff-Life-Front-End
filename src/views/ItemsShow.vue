@@ -5,14 +5,10 @@
     <h1>name: {{ item.name }}</h1>
     <h1>Picture: {{ item.picture }}</h1>
     <p><img v-bind:src="item.picture"></p>
-
   </div>
 </template>
 
 <style>
-img {
-  width: 200px;
-}
 </style>
 
 <script>
