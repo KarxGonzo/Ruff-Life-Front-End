@@ -11,17 +11,18 @@
                             <div class="col-lg-8 col-xl-6">
 
                                     <!-- Name input-->
+                                    <label for="date">Date of Purchase:</label>
                                     <div class="form-floating mb-3">
                                         <input 
                                         class="form-control" 
                                         id="date" 
                                         type="date" v-model="newshoppinghistoryParams.date" 
                                         placeholder="Enter the date of the receipt..." data-sb-validations="required" />
-                                        <label for="date">Full Date</label>
                                         <div class="invalid-feedback" data-sb-feedback="date:required">A date is required.</div>
                                     </div>
                                     <!-- Email address input-->
-                                    <div class="form-floating mb-3">
+                                    <label for="item-select">Choose an Item:</label>
+                                    <div class="form-floating mb-3" >
                                         <select 
                                         class="form-control" 
                                         id="email" 
@@ -32,9 +33,9 @@
                                          </select>
                                     </div>
                                     <!-- Phone number input-->
+                                    <label for="Quantity">Enter Quantity:</label>
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="quantity" type="integer" v-model="newshoppinghistoryParams.quantity" />
-                                        <label for="Quantity">Enter Quantity</label>
                                     </div>
                                     <!-- Submit success message-->
                                     <!---->

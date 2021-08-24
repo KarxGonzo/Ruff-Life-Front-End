@@ -9,7 +9,7 @@
                       <div class="card-body p-4">
                         <a class="text-decoration-none link-dark -link" href="#!"><div class="h5 card-title mb-3">{{ shoppinghistory.date }}</div></a>
                         <p class="card-text mb-0"> 
-                        You bought {{ shoppinghistory.quantity}} of {{ shoppinghistory.item_id }} </p>
+                        You bought {{ shoppinghistory.quantity}} of {{ shoppinghistory.item.name }} </p>
                       </div>
 
                         </div>
@@ -28,9 +28,14 @@ export default {
   data: function () {
     return {
       shoppinghistory: [],
+      items: [],
     };
   },
   created: function () {
+    axios.get("/items").then((response) => {
+      console.log(response.data);
+      this.items = response.data;
+    });
     this.indexShoppingHistory();
   },
   methods: {

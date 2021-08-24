@@ -12,6 +12,7 @@
                         <div class="row gx-5 justify-content-center">
                             <div class="col-lg-8 col-xl-6">
                                     <!-- Pet input-->
+                                    <label for="pet-select">Choose a Pet:</label>
                                     <div class="form-floating mb-3">
                                         <select 
                                         class="form-control" 
@@ -24,6 +25,7 @@
                                         </select>
                                     </div>
                                     <!-- Item Input-->
+                                    <label for="item-select">Choose an Item:</label>
                                     <div class="form-floating mb-3">
                                         <select 
                                         class="form-control" 
@@ -32,12 +34,12 @@
                                         placeholder="Item"
                                         v-model="newFavoriteSnackParams.item_id"
                                         >
-                                        <label for="item">"Please Select an Item"</label>
                                         <option disabled value=" ">Please Select an Item</option>
                                         <option v-for="item in items" v-bind:value="item.id">{{ item.name }}</option>
                                         </select>
                                     </div>
                                     <!-- Rating Input-->
+                                    <label for="rating-input">Enter a Rating:</label>
                                     <div class="form-floating mb-3">
                                         <input 
                                         class="form-control" 
@@ -45,7 +47,6 @@
                                         type="integer" 
                                         placeholder="Rating" 
                                         v-model="newFavoriteSnackParams.rating" />
-                                        <label for="Rating">Rating</label>
                                     </div>
                                     <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button></div>
                             </div>
